@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	
+	<!-- 加载注解 -->   
+    <context:annotation-config/>
+	<!-- 配置spring容器扫描注解 -->
+	<context:component-scan base-package="sgphub" />
+	
+	<!-- 默认的注解映射的支持  等同于配配置了两个bean，一个是映射处理器，适配器   -->
+    <mvc:annotation-driven>
+    	
+    </mvc:annotation-driven>
+     <!-- 自动代理 -->
+    <aop:aspectj-autoproxy  />
+   
+	
+	<!-- 视图解析器 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+        <property name="prefix" value="/UI/"/>       
+        <property name="suffix" value=".jsp"/>
+    </bean> 
+    
+    <!-- 数据库 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+			<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+			<property name="jdbcUrl" value="jdbc:mysql://47.101.37.124:3306/oom?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=CTT&amp;allowMultiQueries=true"></property>
+	        <property name="user" value="root"></property>
+	        <property name="password" value="Yiyi142536"></property>
+		</bean>
+		
+		<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"></property>
+			<property name="hibernateProperties">
+				<props>
+					<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>	
+					<prop key="hibernate.show_sql">true</prop>
+					<prop key="hibernate.format_sql">true</prop>
+					<prop key="hibernate.hbm2ddl.auto">update</prop>
+				</props>			
+			</property>			
+			<property name="packagesToScan" value="sgphub.commons"></property>
+		</bean>
+	 <!--事务管理器  -->
+	<bean id="tm" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	 <!-- 声明式事物的驱动 -->
+    <tx:annotation-driven transaction-manager="tm" proxy-target-class="true"/>	
+		
+	 <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">    
+        <!-- one of the properties available; the maximum file size in bytes -->    
+        <property name="maxUploadSize" value="405600" />    
+    </bean>
+    
+    <!--配置json-->
+    <bean    
+        class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">    
+        <property name="messageConverters">    
+            <list>    
+                <ref bean="mappingJackson2HttpMessageConverter" />    
+            </list>    
+        </property>    
+    </bean>    
+    <bean id="mappingJackson2HttpMessageConverter"    
+        class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">    
+        <property name="supportedMediaTypes">    
+            <list>    
+                <value>text/html;charset=UTF-8</value>    
+                <value>text/json;charset=UTF-8</value>    
+                <value>application/json;charset=UTF-8</value>    
+            </list>    
+        </property>    
+    </bean>
+	    
+  
+   
+    <!--  配置拦截器  -->
+    <!-- 	<mvc:interceptors>	
+				
+				<bean class="com.irelia.sgphub.commons.utils.UserIntercepter"></bean>			
+		
+		</mvc:interceptors> --> 
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</beans>

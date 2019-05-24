@@ -1,0 +1,297 @@
+body {
+	margin: 0;
+	min-width: 1366px;
+}
+.body{
+	height:1300px;
+	background-color: #DCEFFE;
+}
+.head-nav {
+	width: 100%;
+	height: 75px;
+	background-color: #393D49;
+}
+
+.head-nav-logo {
+	width: 13%;
+	float: left;
+	margin-left: 60px;
+	margin-top: 10px;
+}
+
+#sgphub {
+	font-size: 30px;;
+	color: white;
+	font-family: Comic Sans MS;
+	position: relative;
+	top: 8px;
+}
+
+.head-nav-button {
+	width: 40%;
+	height: 100%;
+	float: left;
+	margin-left: 6%;
+}
+
+.head-nav-buttongroup {
+	margin-top: 25px;
+}
+
+.head-nav-search {
+	width: 20%;
+	height: 100%;
+	float: left;
+	margin-left: 4%;
+}
+
+.head-nav-search form {
+	margin-top: 25px;
+	margin-left: 12px;
+}
+
+.scroll-img {
+	width: 100%;
+	height: 280px;
+}
+.scroll-img-left {
+	width: 13%;
+	height: 100%;
+	float: left;
+}
+.scroll-img-middle {
+	width: 74%;
+	height: 100%;
+	float: left;
+}
+.scroll-img-right {
+	width:13%;
+	height: 100%;
+	float: left;
+}
+
+.middle {
+	width: 100%;
+	height: 1250px;
+	background-color: maroon;
+}
+
+.left-blank {
+	width: 13%;
+	height: 100%;
+	float: left;
+}
+
+.show {
+	width: 74%;
+	height: 100%;
+	background-color:#EAEAEA;
+	float: left;
+}
+
+.right-blank {
+	width: 13%;
+	height: 100%;
+	float: left;
+}
+
+.foot {
+	width: 100%;
+	height: 100px;
+}
+
+.show-nav {
+	width: 100%;
+	height: 5%;
+	background-color: aqua;
+}
+
+.show-left {
+	width: 78%;
+	height: 95%;
+	background-color:white;
+	float: left;
+}
+
+.show-right {
+	width: 21.8%;
+	height: 95%;
+	background-color: #EAF7FF;
+	border-left:1px solid #D4D4D4;
+	border-right:1px solid #D4D4D4;
+	float: left;
+}
+
+.show-left-hot {
+	width: 100%;
+	height: 33%;
+
+}
+.post_all{
+	width:750px;
+	margin-left:auto;
+	margin-right:auto;
+	height:100%;
+}
+.post_tab{
+	position: absolute;
+	margin-top:15px;
+	margin-left:25px;
+	width:120px;
+	height:40px;
+}
+.img{
+	position: absolute;
+	width: 120px;
+	height: 40px;;
+}
+.post_tab_title{
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 30px;
+}
+.line_post{
+	position: absolute;
+	margin-top: 60px;
+	width:700px;
+	margin-left: 30px;
+}
+.line_post hr{
+	border-top:2px solid red;;
+}
+.post_Message{
+	position: absolute;
+	margin-top:75px;
+	margin-left:30px;	
+}
+.this_post{
+	width:700px;
+	height: 140px;
+	margin-top:5px;
+	background-color: #F1FAFA;
+}
+.type_parent{
+	width:700px;
+	height: 40px;
+	background-color: #E8FFE8;
+}
+.type_parent span{
+	color:#FFB42E;
+	font-size: 25px;
+}
+.post_title{
+	width:700px;
+	height: 25px;
+}
+.post_title span{
+	color:green;
+	font-size: 16px;
+	margin-left: 30px;
+}
+.post_context{
+	margin-left: 50px;
+	width:600px;
+	height: 55px;
+}
+.post_context span{
+	width:100%;
+	height:100%;
+	text-align:left;
+	font-size: 14px;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	display:block;
+	text-overflow: ellipsis;
+	white-space:normal;
+	overflow-wrap: break-all;
+	word-wrap:break-word; 
+    word-break:keep-all; 
+    
+}
+.post_replyCount{
+	margin-left: 50px;
+	width:600px;
+	height: 20px;
+}
+.post_replyCount span{
+	margin-left: 520px;
+	width:600px;
+	height: 20px;
+
+}
+.show-left-recommend {
+	width: 100%;
+	height: 33%;
+
+}
+
+.show-left-like {
+	width: 100%;
+	height: 32.2%;
+	
+}
+
+.show-right-info {
+	width: 100%;
+	height: 16%;
+	background-color: #FFE8BC;
+}
+.p_message{
+	margin-top:0px;
+	width:100%;
+	height: 100%;
+}
+.p_message_ms{
+	width:200px;
+	height: 160px;
+	margin:auto;
+}
+.photo{
+	position:absolute;
+	margin-top:20px;
+	margin-left:10px;
+	width:80px;
+	height: 80px;
+	
+}
+.imgs{
+	margin:auto;
+	width:100%;
+	height: 100%;
+}
+.user_username{
+	position:absolute;
+	text-overflow: ellipsis;
+	margin-top:50px;
+	margin-left:120px;
+	width:80px;
+	height: 20px;
+}
+.note{
+	position:absolute;
+	margin-top:120px;
+	margin-left:20px;
+	width:180px;
+	height: 30px;
+	
+}
+.message_Count{
+	position:absolute;
+	width:70px;
+	height: 30px;
+}
+.line_middle{
+	position:absolute;
+	margin-left:80px;
+	margin-right: 15px;
+}
+.message_Count2{
+	position:absolute;
+	margin-left:90px;
+	width:70px;
+	height: 30px;
+}
+.show-right-message {
+	width: 100%;
+	height: 84%;
+	background-color: #EAF7FF;
+}
